@@ -1,0 +1,11 @@
+Code Review
+
+Phase 1 - Naming Conventions
+	- rename Clasa1
+	- rename Calculeaza (redundant name) and use lowerCamelCase
+	- rename t, s, perioada (not specific)
+	- rename rezultat (not specific)
+	- rename valoare (not specific)
+
+	- remove the hard-coded values aka magic numbers
+	
