@@ -1,12 +1,23 @@
 package ro.ase.acs.cts.laborator3;
 
-public class Clasa1 {
+import ro.ase.acs.cts.laborator3.refactor.exceptions.InvalidAgeException;
+import ro.ase.acs.cts.laborator3.refactor.exceptions.InvalidPriceException;
+
+public class Product {
 	
 	public static final int MAX_AGE_ACCOUNT=10;
 	public static final float MAX_FIDELITY_DISCOUNT=0.15f;
 	
-	public float computePriceWithDiscount(ProductType productType, float price, int accountAge)
-	  {
+	public float computePriceWithDiscount(ProductType productType, float price, int accountAge) throws InvalidPriceException, InvalidAgeException
+	 {
+		if(price<=0) {
+			throw new InvalidPriceException();
+		}
+		if(accountAge<0) {
+			throw new InvalidAgeException();
+		}
+		
+		
 	    float finalPrice = 0;
 	    float fidelityDiscount = (accountAge > MAX_AGE_ACCOUNT) ? MAX_FIDELITY_DISCOUNT : (float)accountAge/100; 
 	    
@@ -28,7 +39,7 @@ public class Clasa1 {
 	    }
 	    
 	    
-	    if (productType == ProductType.NEW)
+	    /*if (productType == ProductType.NEW)
 	    {
 	      finalPrice = price;
 	    }
@@ -43,7 +54,7 @@ public class Clasa1 {
 	    else if (productType == ProductType.LEGACY)
 	    {
 	      finalPrice = (price - (ProductType.LEGACY.getDiscountValue() * price)) - fidelityDiscount * (price - (ProductType.LEGACY.getDiscountValue() * price));
-	    }
+	    }*/
 	    return finalPrice;
 	  }
 }
