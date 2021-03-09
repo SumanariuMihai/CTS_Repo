@@ -9,6 +9,25 @@ public class Clasa1 {
 	  {
 	    float finalPrice = 0;
 	    float fidelityDiscount = (accountAge > MAX_AGE_ACCOUNT) ? MAX_FIDELITY_DISCOUNT : (float)accountAge/100; 
+	    
+	    switch(productType) {
+	    case NEW:
+	    	finalPrice=price;
+	    	break;
+	    case DISCOUNTED:
+		      finalPrice = (price - (ProductType.DISCOUNTED.getDiscountValue() * price)) - fidelityDiscount * (price - (ProductType.DISCOUNTED.getDiscountValue() * price));
+		      break;
+	    case LIMITED_STOCK:
+		      finalPrice = (price - (ProductType.LIMITED_STOCK.getDiscountValue() * price)) - fidelityDiscount * (price - (ProductType.LIMITED_STOCK.getDiscountValue() * price));
+		      break;
+	    case LEGACY:
+		      finalPrice = (price - (ProductType.LEGACY.getDiscountValue() * price)) - fidelityDiscount * (price - (ProductType.LEGACY.getDiscountValue() * price));
+		      break;
+		      default:
+		    	  throw new UnsupportedOperationException("The enum type is not covered!");
+	    }
+	    
+	    
 	    if (productType == ProductType.NEW)
 	    {
 	      finalPrice = price;
