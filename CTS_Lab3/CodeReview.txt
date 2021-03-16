@@ -11,7 +11,11 @@ Phase 1 - Naming Conventions
 	
 	- add validations for input values
 	
-Phase 2 - K.I.S.S. & Single Responsability
+Phase 2 - K.I.S.S. & Single Responsibility
 	-simplify the expressions
 	-a function should do only one thing
+	
+Phase 3 - Single Responsibility &  Dependency Inversion (DIP)
+	- the static final value may change when marketing strategy will change
+	- getFidelityDiscount() may change when marketing strategy will change
 	
