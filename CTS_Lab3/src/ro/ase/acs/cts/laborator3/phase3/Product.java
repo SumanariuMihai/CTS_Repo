@@ -1,16 +1,21 @@
 package ro.ase.acs.cts.laborator3.phase3;
 
+import ro.ase.acs.cts.laborator3.phase3.services.MarketingServiceInterface;
+import ro.ase.acs.cts.laborator3.phase3.services.ValidatorServiceInterface;
 import ro.ase.acs.cts.laborator3.refactor.exceptions.InvalidAgeException;
 import ro.ase.acs.cts.laborator3.refactor.exceptions.InvalidPriceException;
 
 public class Product {
 	
 	MarketingServiceInterface mkService=null;
+	ValidatorServiceInterface validator=null;
 	
-	public Product(MarketingServiceInterface mkService) {
+	public Product(MarketingServiceInterface mkService,
+					ValidatorServiceInterface validator) {
 		/*if(mkService==null)
 			throw new NullPointerException();*/
 		this.mkService=mkService;
+		this.validator=validator;
 	}
 	
 	//optional - based on design specs
@@ -40,12 +45,8 @@ public class Product {
 	public float computePriceWithDiscount(ProductType productType, float price, int accountAge)
 			throws InvalidPriceException, InvalidAgeException
 	 {
-		if(price <= 0) {
-			throw new InvalidPriceException();
-		}
-		if(accountAge < 0) {
-			throw new InvalidAgeException();
-		}
+		validator.validateAge(accountAge);
+		validator.validatePrice(price);
 		
 		float discountValue=0;
 	    float fidelityDiscount = (productType==ProductType.NEW) ? 0 : mkService.getFidelityDiscount(accountAge);

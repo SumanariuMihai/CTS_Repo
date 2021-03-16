@@ -1,4 +1,4 @@
-package ro.ase.acs.cts.laborator3.phase3;
+package ro.ase.acs.cts.laborator3.phase3.services;
 
 public interface MarketingServiceInterface {
 
