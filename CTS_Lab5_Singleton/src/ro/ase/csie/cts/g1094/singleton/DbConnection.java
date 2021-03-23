@@ -1,14 +1,19 @@
 package ro.ase.csie.cts.g1094.singleton;
 
+import java.util.Hashtable;
+
 public class DbConnection {
 
 	String connString;
 	String schema;
 	
-	private static DbConnection connection=null;
+	private static Hashtable<String, DbConnection> connections=new Hashtable<>();
 	
 	private DbConnection() {
-		System.out.println("create");
+		System.out.println("Creating a configuration object");
+		System.out.println("Loading configuration...");
+		this.connString = "127.0.0.1:1443";
+		this.schema = "cts";
 	}
 
 	private DbConnection(String connString, String schema) {
@@ -17,14 +22,13 @@ public class DbConnection {
 		this.schema = schema;
 	}
 	
-	//it's not clean
-	//it's misleading - others will think they have multiple connections
-	public static DbConnection getConnection(String connString, String schema) {
-		if(DbConnection.connection==null) {
-			connection= new DbConnection(connString,schema);
+	public static DbConnection getDbConnection(String connString, String schema) {
+		DbConnection connection=connections.get(connString);
+		if(connection==null)
+		{
+			connection=new DbConnection(connString,schema);
 		}
-		return DbConnection.connection;
+		return connection;
 	}
-	
 	
 }
