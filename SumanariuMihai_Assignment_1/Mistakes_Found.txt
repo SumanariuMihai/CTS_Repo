@@ -1,0 +1,32 @@
+Mistakes Found
+
+1. "assignment" name for package does not respect conventions ->  renamed into "ro.ase.stud.assignment"
+2. "Account" class name not specific -> renamed into "BankLoanAccount"
+3. Variables should be written on different lines for clarity
+4. "loan_value" variable, "_" is used for constant variables along uppercase -> renamed into "loanValue"
+4.1. same for "account_Type" -> "accountType"
+5. "rate" is not a specific variable -> renamed into "interestRate
+6. "loan" is not a specific function -> renamed in "getLoan"
+7. "getMonthlyRate" function - if it is needed in all classes by the lead, it makes much more sense to exist in an interface
+		-> Created "MonthlyRateGettable" interface that contains the "getMonthlyRate" abstract method
+	- also at this function, I put spaces between variables and "*" sign for clarity
+8. "setValue" function 
+		- name not specific -> changed into "setLoanValue"
+		- parameter "value" not specific -> changed into "newLoanValue"s
+9. exception "Exception" used in function and constructor does not respect Clean Code conventions
+	 -> created new "InvalidLoanRateException", imported and used it instead
+	 -> where this exception exists, now testing for positive instead of negative (inverted the if-else)
+10. function "to_string" is using too much memory from initialising strings, changed into a StringBuilder
+11. function "print" does literally nothing, so I didn't know how to correct it 
+		-> put the content in comment form and thrown an exception until Dev explanains what that was for
+12. found a hard coded value -> added it into an outsourced function to be changed there, not in our function
+13. the spacing on that function is horrid, repaired its' aesthetics
+14. function is overcrowded - changed it into multiple functions
+15. mathematical formula is repetitive, used common factor
+16. "calculate" function name not specific -> changed it into "calculateTotalFee"
+17. found hard coded value "365", deduced it is the number of days and made it into a "DAYS_IN_YEAR" constant
+18. pointless lines found in function -> initialising temp as 365, initialising an account and working with it instead of accounts[i] -> deleted all
+19. whatever names I changed for variables, I changed the constructor parameters accordingly
+20. Constructor can use the setter instead of having another exception
+
+*. found some TAB-key presses where there should be space presses, changed
