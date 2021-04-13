@@ -30,5 +30,17 @@ public class DonaldDuck implements DisneyActions{
 		powerLevel+=power;
 		System.out.println("Power increased to "+powerLevel);
 	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return "Donald Duck";
+	}
+
+	@Override
+	public int getPower() {
+		// TODO Auto-generated method stub
+		return this.powerLevel;
+	}
 	
 }

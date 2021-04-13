@@ -2,8 +2,8 @@ package ro.ase.csie.stud.dp.adapter;
 
 public abstract class ACMESuperHero {
 
-	String name;
-	int lifePoints;
+	public String name;
+	public int lifePoints;
 	int STR;
 	int DEX;
 	int INT;
