@@ -1,0 +1,36 @@
+Reasons of implementation or non-implementation of design patterns in my bachelor topic (CRM for B2B Businesses)
+	
+Creational:
+	Singleton:
+	- The place where I see Singleton used in my thesis is the database connection, because this class needs only one instance.
+	I would still avoid Singleton as much as possible, since my thesis is very dependent on the database and the database will be complex,
+	so I am scared using Singleton might mess something up when refactoring / changing some code, but it could work for the database connection
+	since that is a more simple class
+	
+	Factory (Simple or Method):
+		- Factory (be it Simple or Method) can work for my bachelor thesis pretty well. The way I see it, I want users to be able to choose 
+		what type of data they input in their CRM (shortText, longText, number, a list of options to choose from), which can all have a common class.
+		It's not ideal for all the values though, as it would make the base class very memory heavy, but could work for some specific values of data
+		(combining shortText and longText for example)
+	Builder:
+		- I think Builder is an ideal Design Patter for my bachelor thesis. Since the database would be working with a lot of
+		data, the builder would make the code way clearer and such it would be more efficient
+	
+	Prototype
+		- When the app will become more complex, I will probably need to decide the type of the objects at runtime, so Prototype will be useful.
+		I would have a base class that contains all the base values and then based on what the user decides to add in his CRM the prototype will
+		get casted at runtime into the necessary field. I don't see any particular disadvantage here, since prototype also helps with memory
+		
+		
+		
+		
+Structural:
+	Decorator
+	
+   	Adapter
+   	
+    Proxy
+    
+    Flyweight
+    
+    Composite (optional)

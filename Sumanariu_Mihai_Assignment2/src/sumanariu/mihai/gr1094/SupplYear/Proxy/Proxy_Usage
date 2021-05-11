@@ -1,0 +1,4 @@
+Bachelor Thesis - CRM for B2B Business
+
+Proxy can be used for protecting sensible data that the user has. It can be optionally called at the request of the user.
+The obvious downside is the raise of the complexity, but besides that I see it as necessary

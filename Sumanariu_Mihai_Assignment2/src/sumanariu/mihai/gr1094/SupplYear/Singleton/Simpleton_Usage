@@ -1,0 +1,6 @@
+Bachelor Thesis - CRM for B2B Business
+
+The place where I see Singleton used in my thesis is the database connection, because this class needs only one instance.
+I would still avoid Singleton as much as possible, since my thesis is very dependent on the database and the database will be complex,
+so I am scared using Singleton might mess something up when refactoring / changing some code, but it could work for the database connection
+since that is a more simple class

@@ -1,0 +1,4 @@
+Bachelor Thesis - CRM for B2B Business
+
+I think Builder is an ideal Design Patter for my bachelor thesis. Since the database would be working with a lot of
+data, the builder would make the code way clearer and such it would be more efficient

@@ -1,0 +1,5 @@
+Bachelor Thesis - CRM for B2B Business
+
+ When the app will become more complex, I will probably need to decide the type of the objects at runtime, so Prototype will be useful.
+I would have a base class that contains all the base values and then based on what the user decides to add in his CRM the prototype will
+get casted at runtime into the necessary field. I don't see any particular disadvantage here, since prototype also helps with memory

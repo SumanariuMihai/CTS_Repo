@@ -1,0 +1,7 @@
+Bachelor Thesis - CRM for B2B Business
+
+I might not be creative enough, but I honestly do not find a use for an adapter.
+Well, I do find a use - creating an adapter in order to implement additional actions for any field in the database, which is its' general purpose.
+Problem is I don't know what new actions to add or why would I not add them in the first place for all fields.
+
+Post-doing this, I had the idea of making the field more protected through this, so I will use this at proxy as well
